@@ -1,30 +1,35 @@
 {
-  "name": "TG File Share/Sharing Bot",
-  "description": "file sharing bot store posts and it can access by special links",
-  "keywords": [
-    "telegram",
-    "file",
-    "sharing"
-  ],
-    "ADMINS": {
-      "description": "A space separated list of user_ids of Admins, they can only create links",
-      "value": "",
-      "required": false
+    "name": "Bitly Link Shortener",
+    "description": "Bot can Generate Bitly short l8nk ",
+    "repository": "https://github.com/lntechnical2/BitlyBot",
+    "keywords": ["Bitly", "pyrogram", "telegram bot"],
+    "env": {
+        "TOKEN": {
+            "description": "Your Bot token from @Botfather"
+            "required": false
+        },
+        "API_ID": {
+            "description": "Your API_ID from https://my.telegram.org/apps"
+            "required": false
+        },
+        "API_HASH": {
+            "description": "Your API_HASH from https://my.telegram.org/apps"
+            "required": false
+        },
+        "BITLY_TOKEN":{
+            "description": "Your BITLY_TOKEN from https://bitly.is/accesstoken"
+            "required": false
+        
+        }
     },
-    "PROTECT_CONTENT": {
-      "description": "Protect contents from getting forwarded",
-      "value": "False",
-      "required": false
-    }
-  },
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    }
-  ],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "eco"
-    }
-  }
+    "buildpacks": [{
+        "url": "heroku/python"
+    }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "eco"
+        }
+    },
+    "stack": "heroku-20"
+}
