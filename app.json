@@ -1,35 +1,85 @@
 {
-    "name": "Bitly Link Shortener",
-    "description": "Bot can Generate Bitly short l8nk ",
-    "repository": "https://github.com/lntechnical2/BitlyBot",
-    "keywords": ["Bitly", "pyrogram", "telegram bot"],
-    "env": {
-        "TOKEN": {
-            "description": "Your Bot token from @Botfather"
-            "required": false
-        },
-        "API_ID": {
-            "description": "Your API_ID from https://my.telegram.org/apps"
-            "required": false
-        },
-        "API_HASH": {
-            "description": "Your API_HASH from https://my.telegram.org/apps"
-            "required": false
-        },
-        "BITLY_TOKEN":{
-            "description": "Your BITLY_TOKEN from https://bitly.is/accesstoken"
-            "required": false
-        
-        }
+  "name": "TG File Share/Sharing Bot",
+  "description": "file sharing bot store posts and it can access by special links",
+  "keywords": [
+    "telegram",
+    "file",
+    "sharing"
+  ],
+  "repository": "https://github.com/CodeXBotz/File-Sharing-Bot",
+  "logo": "https://ibb.co/FgPVtzw",
+  "env": {
+    "TG_BOT_TOKEN": {
+      "description": "Your Bot token, Get it from @Botfather",
+      "value": ""
+      "required": false
     },
-    "buildpacks": [{
-        "url": "heroku/python"
-    }],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "eco"
-        }
+    "OWNER_ID": {
+      "description": "An integer of consisting of your owner ID",
+      "value": "1250450587"
+      "required": false
     },
-    "stack": "heroku-20"
+    "APP_ID":{
+      "description": "your app id, take it from my.telegram.org",
+      "value": ""
+      "required": false
+    },
+    "DATABASE_URL": {
+      "description": "Paste your mongo db url",
+      "value": "url"
+      "required": false
+    },
+    "DATABASE_NAME":{
+      "description": "Enter your DATABASE_NAME ",
+      "value": "filesharexbot"
+      "required": false
+    },
+    "API_HASH":{
+      "description": "your api hash, take it from my.telegram.org",
+      "value": ""
+      "required": false
+    },
+    "CHANNEL_ID":{
+      "description": "make a channel (database channel), then make the bot as admin in channel, and it's id",
+      "value": "-100"
+      "required": false
+    },
+    "FORCE_SUB_CHANNEL":{
+      "description": "id of the channel or group, if you want enable force sub feature else put 0",
+      "value": "0"
+      "required": false
+    },
+    "START_MESSAGE": {
+      "description": "Optional: start message of bot, use HTML parsemode format",
+      "value": "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link."
+      "required": false
+    },
+    "FORCE_SUB_MESSAGE": {
+      "description": "Optional: Force Sub message of bot, use HTML parsemode format",
+      "value": "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>"
+      "required": false
+    },
+    "ADMINS": {
+      "description": "A space separated list of user_ids of Admins, they can only create links",
+      "value": "",
+      "required": false
+    },
+    "PROTECT_CONTENT": {
+      "description": "Protect contents from getting forwarded",
+      "value": "False",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
 }
+
